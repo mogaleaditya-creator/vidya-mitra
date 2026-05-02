@@ -1,62 +1,73 @@
-body {
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AI Study Assistant</title>
+  <script src="{{ url_for('static',filename='script.js')}}" defer> </script>
+  <style>
+    /* Vibrant Sunrise Background */
+    body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       padding: 30px;
-      background: linear-gradient(to bottom right, #f0f4f8, #e2e8f0);
-      color: #1e293b;
+      background: linear-gradient(to bottom right, #fff1f2, #ffe4e6); 
+      color: #312e81; 
       max-width: 900px;
       margin: 0 auto;
       min-height: 100vh;
     }
     
     h1 {
-      color: #0f172a;
+      color: #1e1b4b; 
       text-align: center;
       margin-bottom: 30px;
     }
 
+    /* Soft Pink Input Area */
     textarea {
       width: 100%;
       height: 150px;
       margin-bottom: 15px;
       padding: 15px;
-      border: 2px solid #cbd5e1;
+      border: 2px solid #fecdd3;
       border-radius: 10px;
       font-size: 16px;
       box-sizing: border-box; 
       box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
-      transition: border-color 0.3s;
+      transition: border-color 0.3s, box-shadow 0.3s;
       resize: vertical;
+      background-color: rgba(255, 255, 255, 0.8);
     }
 
+    /* Vibrant Coral Glow on Focus */
     textarea:focus {
       outline: none;
-      border-color: #3b82f6;
-      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+      border-color: #fb7185;
+      box-shadow: 0 0 0 3px rgba(251, 113, 133, 0.2);
     }
 
     input[type="file"] {
       margin-bottom: 20px;
       display: block;
       font-family: inherit;
-      color: #475569;
+      color: #4c1d95;
     }
 
+    /* Bold Coral Buttons */
     button {
       padding: 12px 20px;
       margin: 5px 10px 20px 0;
       cursor: pointer;
-      background-color: #3b82f6;
+      background-color: #e11d48; 
       color: white;
       border: none;
       border-radius: 8px;
       font-size: 15px;
       font-weight: bold;
       transition: background-color 0.2s, transform 0.1s;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 6px rgba(225, 29, 72, 0.2);
     }
 
     button:hover {
-      background-color: #2563eb;
+      background-color: #be123c;
       transform: translateY(-2px);
     }
 
@@ -64,18 +75,19 @@ body {
       transform: translateY(1px);
     }
 
+    /* Bright Output Box */
     .output {
       margin-top: 20px;
       padding: 25px;
       background: white;
       border-radius: 12px;
-      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
-      border-left: 6px solid #3b82f6;
+      box-shadow: 0 10px 15px -3px rgba(225, 29, 72, 0.1);
+      border-left: 6px solid #e11d48;
       line-height: 1.6;
       font-size: 16px;
     }
 
-    /* Modern Flashcard Styling */
+    /* Flashcard Grid */
     .flashcard-grid {
       display: flex;
       flex-wrap: wrap;
@@ -121,15 +133,39 @@ body {
       line-height: 1.4;
     }
 
+    /* Front: Clean White */
     .flashcard-front {
       background-color: #ffffff;
-      color: #334155;
-      border: 1px solid #e2e8f0;
+      color: #312e81;
+      border: 1px solid #ffe4e6;
     }
 
+    /* Back: Deep Indigo/Purple */
     .flashcard-back {
-      background-color: #10b981; /* A nice modern emerald green */
+      background-color: #4f46e5; 
       color: white;
       transform: rotateY(180deg);
-      border: 1px solid #059669;
+      border: 1px solid #3730a3;
     }
+  </style>
+</head>
+
+<body>
+
+  <h1>📘 AI Study Assistant</h1>
+
+  <!-- Input -->
+  <textarea id="notes" placeholder="Paste your notes here..."></textarea>
+  <input type="file" id="fileUpload" accept=".txt,.pdf" style="margin-bottom: 10px; display: block;" />
+
+  <button onclick="generateSummary()">Summary</button>
+  <button onclick="generateQuiz()">Quiz</button>
+  <button onclick="generateFlashcards()">Flashcards</button>
+
+  <!-- Output -->
+  <div class="output" id="output">
+    Output will appear here...
+  </div>
+
+</body>
+</html>
