@@ -1,7 +1,7 @@
 from flask import Flask, render_template
-app.run(host="0.0.0.0", port=10000)
-app = Flask(__name__)
 
+app = Flask(__name__)
+app.run(host="0.0.0.0", port=10000)
 @app.route("/")
 def home():
     return render_template("index.html")
