@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AI Study Assistant</title>
+  <style>
+    body {
+      font-family: Arial;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    textarea {
+      width: 100%;
+      height: 150px;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 10px 15px;
+      margin: 5px;
+      cursor: pointer;
+    }
+    .output {
+      margin-top: 20px;
+      padding: 15px;
+      background: white;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>📘 AI Study Assistant</h1>
+
+  <!-- Input -->
+  <textarea id="notes" placeholder="Paste your notes here..."></textarea>
+
+  <button onclick="generateSummary()">Summary</button>
+  <button onclick="generateQuiz()">Quiz</button>
+  <button onclick="generateFlashcards()">Flashcards</button>
+
+  <!-- Output -->
+  <div class="output" id="output">
+    Output will appear here...
+  </div>
+
+<script>
+function generateSummary() {
+  document.getElementById("output").innerText = "Summary generated...";
+}
+
+function generateQuiz() {
+  document.getElementById("output").innerText = "Quiz generated...";
+}
+
+function generateFlashcards() {
+  document.getElementById("output").innerText = "Flashcards generated...";
+}
+</script>
+
+</body>
+</html>
